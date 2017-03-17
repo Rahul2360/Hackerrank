@@ -4,7 +4,14 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-
+    class Student
+    {
+        public:
+            int age;
+            char first_name[60];
+            char last_name[60];
+            int standard;
+    };
 /*
     add code for struct here.
 */
@@ -17,4 +24,3 @@ int main() {
 
     return 0;
 }
-

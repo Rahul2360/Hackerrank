@@ -7,6 +7,25 @@
 using namespace std;
 
 // Write your Student class here
+class Student{
+  int marks[5];
+    int sum=0;
+    public:
+    void input();
+    int calculateTotalScore();
+
+};
+void Student::input()
+    {
+    for(int i=0;i<5;i++)
+    cin >> marks[i];
+}
+int Student::calculateTotalScore()
+    {
+    for(int i=0;i<5;i++)
+    sum+=marks[i];
+    return sum;
+}
 int main() {
     int n; // number of students
     cin >> n;

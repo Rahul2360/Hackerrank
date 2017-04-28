@@ -1,6 +1,30 @@
 #include <iostream>
-
 using namespace std;
+class Rectangle
+{
+    public:
+    int height;
+    int width;
+    void display(){
+        cout << width << " " << height << endl;
+    }
+};
+class RectangleArea:public Rectangle
+{
+public:
+    void read_input() {
+        cin >> width;
+        cin >> height;
+    }
+    void display() {
+        cout << height*width;
+    }
+
+};
+/*
+ * Create classes Rectangle and RectangleArea
+ */
+
 int main()
 {
     /*

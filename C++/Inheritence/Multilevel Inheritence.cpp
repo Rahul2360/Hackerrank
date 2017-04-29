@@ -18,7 +18,12 @@ class Isosceles : public Triangle{
           cout<<"I am an isosceles triangle\n";
         }
 };
-
+class Equilateral:public Isosceles{
+    public:
+        void equilateral(){
+            cout << "I am an equilateral triangle\n";
+        }
+};
 
 //Write your code here.
 int main(){

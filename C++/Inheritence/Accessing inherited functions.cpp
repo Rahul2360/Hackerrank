@@ -8,6 +8,29 @@ int callC=0;
 class A
 {
 protected:
+   class D :public A,public B,public C
+{
+
+	int val;
+	public:
+		//Initially val is 1
+		 D()
+		 {
+		 	val=1;
+         }
+
+		 //Implement this function
+		 void update_val(int new_val)
+		 {
+            int a=new_val;
+             for(;a%2==0;a/=2)A::func(val);
+             for(;a%3==0;a/=3)B::func(val);
+             for(;a%5==0;a/=5)C::func(val);
+
+		 }
+		 //For Checking Purpose
+		 void check(int); //Do not delete this line.
+};
 
    void func(int  & a)
    {

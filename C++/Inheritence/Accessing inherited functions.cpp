@@ -8,29 +8,6 @@ int callC=0;
 class A
 {
 protected:
-   class D :public A,public B,public C
-{
-
-	int val;
-	public:
-		//Initially val is 1
-		 D()
-		 {
-		 	val=1;
-         }
-
-		 //Implement this function
-		 void update_val(int new_val)
-		 {
-            int a=new_val;
-             for(;a%2==0;a/=2)A::func(val);
-             for(;a%3==0;a/=3)B::func(val);
-             for(;a%5==0;a/=5)C::func(val);
-
-		 }
-		 //For Checking Purpose
-		 void check(int); //Do not delete this line.
-};
 
    void func(int  & a)
    {
@@ -58,8 +35,7 @@ protected:
       callC++;
    }
 };
-
-class D :public A,public B,public C
+class D :public A,public B, public C
 {
 
 	int val;
@@ -68,20 +44,50 @@ class D :public A,public B,public C
 		 D()
 		 {
 		 	val=1;
-         }
-
+		 }
 		 //Implement this function
 		 void update_val(int new_val)
 		 {
-            int a=new_val;
-             for(;a%2==0;a/=2)A::func(val);
-             for(;a%3==0;a/=3)B::func(val);
-             for(;a%5==0;a/=5)C::func(val);
+           if (new_val % 2 == 0){
+               new_val = new_val/2;
+               A::func(val);
+               return update_val(new_val);
+           }
+           if (new_val % 3 == 0){
+               new_val = new_val/3;
+               B::func(val);
+               return update_val(new_val);
+           }
 
+            if (new_val % 5 == 0){
+               new_val = new_val/5;
+               C::func(val);
+               return update_val(new_val);
+             }
+             /*int a = new_val;
+             while ( a %2 == 0)
+            {
+                 a = a/2;
+                 A::func(val);
+            }
+             while ( a % 3 == 0)
+             {
+                 a = a/3;
+                 B::func(val);
+             }
+              while ( a % 5 == 0)
+             {
+                 a = a/5;
+                 C::func(val);
+             }*/
+           // for(;new_val%2==0;new_val/=2)A::func(val);
+			//for(;new_val%3==0;new_val/=3)B::func(val);
+			//for(;new_val%5==0;new_val/=5)C::func(val);
 		 }
 		 //For Checking Purpose
 		 void check(int); //Do not delete this line.
 };
+
 void D::check(int new_val)
 {
        update_val(new_val);
@@ -97,4 +103,3 @@ int main()
    d.check(new_val);
 
 }
-

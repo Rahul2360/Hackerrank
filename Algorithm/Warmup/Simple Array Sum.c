@@ -7,14 +7,14 @@
 #include <stdbool.h>
 
 int main(){
-    int n;
+    int n,arr_i,i;
     scanf("%d",&n);
     int arr[n];
-    for(int arr_i = 0; arr_i < n; arr_i++){
+    for(arr_i = 0; arr_i < n; arr_i++){
        scanf("%d",&arr[arr_i]);
     }
     int sum;
-    for(int i=0;i<n;i++)
+    for(i=0;i<n;i++)
         sum+=arr[i];
     printf("%d",sum);
     return 0;

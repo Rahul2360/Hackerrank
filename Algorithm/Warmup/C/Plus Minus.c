@@ -7,15 +7,15 @@
 #include <stdbool.h>
 
 int main(){
-    int n;
+    int n,arr_i,i;
     scanf("%d",&n);
     int arr[n];
-    for(int arr_i = 0; arr_i < n; arr_i++){
+    for(arr_i = 0; arr_i < n; arr_i++){
        scanf("%d",&arr[arr_i]);
     }
     int positive=0,negative=0,zero=0;
     float fpositive,fnegative,fzero;
-    for(int i=0;i<n;i++){
+    for(i=0;i<n;i++){
         if(arr[i]>0)
             positive++;
         else if(arr[i]<0)
